@@ -86,4 +86,8 @@ defmodule L99InElixirTest do
   test "Remove the K'th element from a list." do
     assert L.P20.remove_at([:a, :b, :c, :d], 2) == [:a, :c, :d]
   end
+
+  test "Insert an element at a given position into a list." do
+    assert L.P21.insert_at([:a, :b, :c, :d], :alpha, 2) == [:a, :alpha, :b, :c, :d]
+  end
 end

@@ -162,4 +162,10 @@ defmodule L99InElixir do
     defp _remove_at([x | xs], n, ys), do: _remove_at(xs, n-1, [x | ys])
     #def remove_at(xs, n), do: Enum.take(xs, n-1) ++ Enum.drop(xs, n)
   end
+
+  defmodule P21 do
+    def insert_at(xs, z, n), do: _insert_at(xs, z, n, [])
+    defp _insert_at(xs, z, 1, ys), do: Enum.reduce ys, [z | xs], &[&1 | &2]
+    defp _insert_at([x | xs], z, n, ys), do: _insert_at(xs, z, n-1, [x | ys])
+  end
 end
