@@ -18,4 +18,8 @@ defmodule L99InElixirTest do
   test "Find the number of elements of a list." do
     assert L.P04.length([:a, :b, :c]) == 3
   end
+
+  test "Reverse a list." do
+    assert L.P05.reverse([:a, :b, :c, :d]) == [:d, :c, :b, :a]
+  end
 end
