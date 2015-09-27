@@ -155,4 +155,11 @@ defmodule L99InElixir do
       end
     end
   end
+
+  defmodule P20 do
+    def remove_at(xs, n), do: _remove_at(xs, n, [])
+    defp _remove_at([_ | xs], 1, ys), do: Enum.reduce ys, xs, &[&1 | &2]
+    defp _remove_at([x | xs], n, ys), do: _remove_at(xs, n-1, [x | ys])
+    #def remove_at(xs, n), do: Enum.take(xs, n-1) ++ Enum.drop(xs, n)
+  end
 end

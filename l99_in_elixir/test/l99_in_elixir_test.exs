@@ -82,4 +82,8 @@ defmodule L99InElixirTest do
     assert L.P19.rotate([:a, :b, :c, :d, :e, :f, :g, :h], 3) == [:d, :e, :f, :g, :h, :a, :b, :c]
     assert L.P19.rotate([:a, :b, :c, :d, :e, :f, :g, :h], -2) == [:g, :h, :a, :b, :c, :d, :e, :f]
   end
+
+  test "Remove the K'th element from a list." do
+    assert L.P20.remove_at([:a, :b, :c, :d], 2) == [:a, :c, :d]
+  end
 end
