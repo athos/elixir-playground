@@ -22,4 +22,10 @@ defmodule L99InElixirTest do
   test "Reverse a list." do
     assert L.P05.reverse([:a, :b, :c, :d]) == [:d, :c, :b, :a]
   end
+
+  test "Find out whether a list is a palindrome." do
+    assert L.P06.palindrome?([1, 2, 3, 2, 1])
+    assert L.P06.palindrome?([1, 2, 3, 3, 2, 1])
+    assert !L.P06.palindrome?([1, 2, 3, 2, 4])
+  end
 end

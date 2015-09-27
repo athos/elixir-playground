@@ -38,4 +38,10 @@ defmodule L99InElixir do
     end
     #def reverse(xs), do: Enum.reverse xs
   end
+
+  defmodule P06 do
+    def palindrome?(xs) do
+      xs == Enum.reverse(xs)
+    end
+  end
 end
