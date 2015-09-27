@@ -40,4 +40,8 @@ defmodule L99InElixirTest do
   test "Pack consecutive duplicates of list elements into sublists." do
     assert L.P09.pack([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [[:a, :a, :a, :a], [:b], [:c, :c], [:a, :a], [:d], [:e, :e, :e, :e]]
   end
+
+  test "Run-length encoding of a list." do
+    assert L.P10.encode([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [{4, :a}, {1, :b}, {2, :c}, {2, :a}, {1, :d}, {4, :e}]
+  end
 end

@@ -70,4 +70,15 @@ defmodule L99InElixir do
     defp _pack(t, [t | xs], acc, ys), do: _pack(t, xs, [t | acc], ys)
     defp _pack(_, [x | xs], acc, ys), do: _pack(x, xs, [x], [acc | ys])
   end
+
+  defmodule P10 do
+    def encode([]), do: []
+    def encode([x | xs]), do: _encode(x, xs, 1, [])
+    defp _encode(t, [], n, ys), do: Enum.reverse [{n, t} | ys]
+    defp _encode(t, [t | xs], n, ys), do: _encode(t, xs, n+1, ys)
+    defp _encode(t, [x | xs], n, ys), do: _encode(x, xs, 1, [{n, t} | ys])
+    # def encode(xs) do
+    #   P09.pack(xs) |> Enum.map fn ([t | _] = ys) -> {Enum.count(ys), t} end
+    # end
+  end
 end
