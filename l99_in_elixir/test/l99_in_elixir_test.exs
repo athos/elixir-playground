@@ -36,4 +36,8 @@ defmodule L99InElixirTest do
   test "Eliminate consecutive duplicates of list elements." do
     assert L.P08.compress([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [:a, :b, :c, :a, :d, :e]
   end
+
+  test "Pack consecutive duplicates of list elements into sublists." do
+    assert L.P09.pack([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [[:a, :a, :a, :a], [:b], [:c, :c], [:a, :a], [:d], [:e, :e, :e, :e]]
+  end
 end

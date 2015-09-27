@@ -62,4 +62,12 @@ defmodule L99InElixir do
     defp _compress(t, [t | xs], ys), do: _compress(t, xs, ys)
     defp _compress(_, [x | xs], ys), do: _compress(x, xs, [x | ys])
   end
+
+  defmodule P09 do
+    def pack([]), do: []
+    def pack([x | xs]), do: _pack(x, xs, [x], [])
+    defp _pack(_, [], acc, ys), do: Enum.reverse [acc | ys]
+    defp _pack(t, [t | xs], acc, ys), do: _pack(t, xs, [t | acc], ys)
+    defp _pack(_, [x | xs], acc, ys), do: _pack(x, xs, [x], [acc | ys])
+  end
 end
