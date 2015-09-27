@@ -92,4 +92,16 @@ defmodule L99InElixir do
       end
     end
   end
+
+  defmodule P12 do
+    def decode(xs) do
+      Stream.flat_map(xs, fn x ->
+        case x do
+          {n, a} -> Stream.cycle([a]) |> Enum.take(n)
+          _ -> [x]
+        end
+      end)
+      |> Enum.into([])
+    end
+  end
 end

@@ -48,4 +48,9 @@ defmodule L99InElixirTest do
   test "Modified run-length encoding." do
     assert L.P11.encode_modified([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [{4, :a}, :b, {2, :c}, {2, :a}, :d, {4, :e}]
   end
+
+  test "Decode a run-length encoded list." do
+    xs = [:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]
+    assert L.P12.decode(L.P11.encode_modified(xs)) == xs
+  end
 end
