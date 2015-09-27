@@ -101,8 +101,8 @@ defmodule L99InElixir do
   end
 
   defmodule P13 do
-    def encode([]), do: []
-    def encode([x | xs]), do: _encode(x, xs, 1, [])
+    def encode_direct([]), do: []
+    def encode_direct([x | xs]), do: _encode(x, xs, 1, [])
 
     defp _encode(t, [], n, ys), do: Enum.reverse(_add(n, t, ys))
     defp _encode(t, [t | xs], n, ys), do: _encode(t, xs, n+1, ys)
