@@ -130,4 +130,11 @@ defmodule L99InElixir do
     defp _drop([_ | xs], n, 1, ys), do: _drop(xs, n, n, ys)
     defp _drop([x | xs], n, i, ys), do: _drop(xs, n, i-1, [x | ys])
   end
+
+  defmodule P17 do
+    def split(xs, n), do: _split(xs, n, [])
+    defp _split([x | xs], 1, ys), do: {Enum.reverse([x | ys]), xs}
+    defp _split([x | xs], n, ys), do: _split(xs, n-1, [x | ys])
+    #def split(xs, n), do: {Enum.take(xs, n), Enum.drop(xs, n)}
+  end
 end

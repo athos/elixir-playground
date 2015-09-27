@@ -69,4 +69,8 @@ defmodule L99InElixirTest do
   test "Drop every N'th element from a list." do
     assert L.P16.drop([:a, :b, :c, :d, :e, :f, :g, :h, :i, :k], 3) == [:a, :b, :d, :e, :g, :h, :k]
   end
+
+  test "Split a list into two parts; the length of the first part is given." do
+    assert L.P17.split([:a, :b, :c, :d, :e, :f, :g, :h, :i, :k], 3) == {[:a, :b, :c], [:d, :e, :f, :g, :h, :i, :k]}
+  end
 end
