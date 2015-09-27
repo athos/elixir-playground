@@ -77,4 +77,9 @@ defmodule L99InElixirTest do
   test "Extract a slice from a list." do
     assert L.P18.slice([:a, :b, :c, :d, :e, :f, :g, :h, :i, :k], 3, 7) == [:c, :d, :e, :f, :g]
   end
+
+  test "Rotate a list N places to the left." do
+    assert L.P19.rotate([:a, :b, :c, :d, :e, :f, :g, :h], 3) == [:d, :e, :f, :g, :h, :a, :b, :c]
+    assert L.P19.rotate([:a, :b, :c, :d, :e, :f, :g, :h], -2) == [:g, :h, :a, :b, :c, :d, :e, :f]
+  end
 end

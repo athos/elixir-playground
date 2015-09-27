@@ -144,4 +144,15 @@ defmodule L99InElixir do
     end
     #def slice(xs, m, n), do: Enum.slice(xs, m-1, n-m+1)
   end
+
+  defmodule P19 do
+    def rotate(xs, n) do
+      if n >= 0 do
+        Enum.drop(xs, n) ++ Enum.take(xs, n)
+      else
+        len = Enum.count xs
+        Enum.drop(xs, len+n) ++ Enum.take(xs, len+n)
+      end
+    end
+  end
 end
