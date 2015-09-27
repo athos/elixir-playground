@@ -44,4 +44,14 @@ defmodule L99InElixir do
       xs == Enum.reverse(xs)
     end
   end
+
+  defmodule P07 do
+    def my_flatten(xs), do: _my_flatten(xs, [])
+    defp _my_flatten([], ys), do: ys
+    defp _my_flatten([x | xs], ys) do
+      flattened = if is_list(x), do: my_flatten(x), else: [x]
+      ys ++ flattened ++ my_flatten(xs)
+    end
+    #def my_flatten(xs), do: List.flatten xs
+  end
 end

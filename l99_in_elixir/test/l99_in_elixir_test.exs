@@ -28,4 +28,8 @@ defmodule L99InElixirTest do
     assert L.P06.palindrome?([1, 2, 3, 3, 2, 1])
     assert !L.P06.palindrome?([1, 2, 3, 2, 4])
   end
+
+  test "Flatten a nested list structure." do
+    assert L.P07.my_flatten([:a, [:b, [:c, :d], :e]]) == [:a, :b, :c, :d, :e]
+  end
 end
