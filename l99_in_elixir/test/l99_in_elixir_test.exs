@@ -65,4 +65,8 @@ defmodule L99InElixirTest do
   test "Replicate the elements of a list a given number of times." do
     assert L.P15.repli([:a, :b, :c], 3) == [:a, :a, :a, :b, :b, :b, :c, :c, :c]
   end
+
+  test "Drop every N'th element from a list." do
+    assert L.P16.drop([:a, :b, :c, :d, :e, :f, :g, :h, :i, :k], 3) == [:a, :b, :d, :e, :g, :h, :k]
+  end
 end

@@ -123,4 +123,11 @@ defmodule L99InElixir do
       Stream.flat_map(xs, &Enum.take(Stream.cycle([&1]), n)) |> Enum.into([])
     end
   end
+
+  defmodule P16 do
+    def drop(xs, n), do: _drop(xs, n, n, [])
+    defp _drop([], _, _, ys), do: Enum.reverse ys
+    defp _drop([_ | xs], n, 1, ys), do: _drop(xs, n, n, ys)
+    defp _drop([x | xs], n, i, ys), do: _drop(xs, n, i-1, [x | ys])
+  end
 end
