@@ -44,4 +44,8 @@ defmodule L99InElixirTest do
   test "Run-length encoding of a list." do
     assert L.P10.encode([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [{4, :a}, {1, :b}, {2, :c}, {2, :a}, {1, :d}, {4, :e}]
   end
+
+  test "Modified run-length encoding." do
+    assert L.P11.encode_modified([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [{4, :a}, :b, {2, :c}, {2, :a}, :d, {4, :e}]
+  end
 end

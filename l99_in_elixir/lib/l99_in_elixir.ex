@@ -81,4 +81,15 @@ defmodule L99InElixir do
     #   P09.pack(xs) |> Enum.map fn ([t | _] = ys) -> {Enum.count(ys), t} end
     # end
   end
+
+  defmodule P11 do
+    def encode_modified(xs) do
+      P10.encode(xs) |> Enum.map fn x ->
+        case x do
+          {1, a} -> a
+          _ -> x
+        end
+      end
+    end
+  end
 end
