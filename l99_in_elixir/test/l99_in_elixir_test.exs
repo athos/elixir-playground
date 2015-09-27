@@ -53,4 +53,8 @@ defmodule L99InElixirTest do
     xs = [:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]
     assert L.P12.decode(L.P11.encode_modified(xs)) == xs
   end
+
+  test "Run-length encoding of a list (direct solution)." do
+    assert L.P13.encode([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [{4, :a}, :b, {2, :c}, {2, :a}, :d, {4, :e}]
+  end
 end

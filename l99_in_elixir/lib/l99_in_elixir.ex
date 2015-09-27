@@ -72,14 +72,9 @@ defmodule L99InElixir do
   end
 
   defmodule P10 do
-    def encode([]), do: []
-    def encode([x | xs]), do: _encode(x, xs, 1, [])
-    defp _encode(t, [], n, ys), do: Enum.reverse [{n, t} | ys]
-    defp _encode(t, [t | xs], n, ys), do: _encode(t, xs, n+1, ys)
-    defp _encode(t, [x | xs], n, ys), do: _encode(x, xs, 1, [{n, t} | ys])
-    # def encode(xs) do
-    #   P09.pack(xs) |> Enum.map fn ([t | _] = ys) -> {Enum.count(ys), t} end
-    # end
+    def encode(xs) do
+      P09.pack(xs) |> Enum.map fn ([t | _] = ys) -> {Enum.count(ys), t} end
+    end
   end
 
   defmodule P11 do
@@ -103,5 +98,17 @@ defmodule L99InElixir do
       end)
       |> Enum.into([])
     end
+  end
+
+  defmodule P13 do
+    def encode([]), do: []
+    def encode([x | xs]), do: _encode(x, xs, 1, [])
+
+    defp _encode(t, [], n, ys), do: Enum.reverse(_add(n, t, ys))
+    defp _encode(t, [t | xs], n, ys), do: _encode(t, xs, n+1, ys)
+    defp _encode(t, [x | xs], n, ys), do: _encode(x, xs, 1, _add(n, t, ys))
+
+    defp _add(1, t, ys), do: [t | ys]
+    defp _add(n, t, ys), do: [{n, t} | ys]
   end
 end
