@@ -14,4 +14,8 @@ defmodule L99InElixirTest do
   test "Find the K'th element of a list." do
     assert L.P03.element_at([:a, :b, :c, :d, :e], 3) == :c
   end
+
+  test "Find the number of elements of a list." do
+    assert L.P04.length([:a, :b, :c]) == 3
+  end
 end

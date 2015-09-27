@@ -20,4 +20,13 @@ defmodule L99InElixir do
     end
     #def element_at(xs, n), do: Enum.at xs, n-1
   end
+
+  defmodule P04 do
+    def length(xs), do: _length(xs, 0)
+    def _length([], n), do: n
+    def _length([_ | xs], n) do
+      _length xs, n+1
+    end
+    #def length(xs), do: Enum.count xs
+  end
 end
