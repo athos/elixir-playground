@@ -73,4 +73,8 @@ defmodule L99InElixirTest do
   test "Split a list into two parts; the length of the first part is given." do
     assert L.P17.split([:a, :b, :c, :d, :e, :f, :g, :h, :i, :k], 3) == {[:a, :b, :c], [:d, :e, :f, :g, :h, :i, :k]}
   end
+
+  test "Extract a slice from a list." do
+    assert L.P18.slice([:a, :b, :c, :d, :e, :f, :g, :h, :i, :k], 3, 7) == [:c, :d, :e, :f, :g]
+  end
 end

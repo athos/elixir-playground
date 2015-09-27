@@ -137,4 +137,11 @@ defmodule L99InElixir do
     defp _split([x | xs], n, ys), do: _split(xs, n-1, [x | ys])
     #def split(xs, n), do: {Enum.take(xs, n), Enum.drop(xs, n)}
   end
+
+  defmodule P18 do
+    def slice(xs, m, n) do
+      xs |> Enum.drop(m-1) |> Enum.take(n-m+1)
+    end
+    #def slice(xs, m, n), do: Enum.slice(xs, m-1, n-m+1)
+  end
 end
