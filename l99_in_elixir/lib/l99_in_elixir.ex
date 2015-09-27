@@ -54,4 +54,12 @@ defmodule L99InElixir do
     end
     #def my_flatten(xs), do: List.flatten xs
   end
+
+  defmodule P08 do
+    def compress([]), do: []
+    def compress([x | xs]), do: _compress(x, xs, [x])
+    defp _compress(_, [], ys), do: Enum.reverse ys
+    defp _compress(t, [t | xs], ys), do: _compress(t, xs, ys)
+    defp _compress(_, [x | xs], ys), do: _compress(x, xs, [x | ys])
+  end
 end

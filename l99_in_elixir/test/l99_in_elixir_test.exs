@@ -32,4 +32,8 @@ defmodule L99InElixirTest do
   test "Flatten a nested list structure." do
     assert L.P07.my_flatten([:a, [:b, [:c, :d], :e]]) == [:a, :b, :c, :d, :e]
   end
+
+  test "Eliminate consecutive duplicates of list elements." do
+    assert L.P08.compress([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [:a, :b, :c, :a, :d, :e]
+  end
 end
