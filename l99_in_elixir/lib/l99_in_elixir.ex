@@ -23,8 +23,8 @@ defmodule L99InElixir do
 
   defmodule P04 do
     def length(xs), do: _length(xs, 0)
-    def _length([], n), do: n
-    def _length([_ | xs], n) do
+    defp _length([], n), do: n
+    defp _length([_ | xs], n) do
       _length xs, n+1
     end
     #def length(xs), do: Enum.count xs
@@ -32,8 +32,8 @@ defmodule L99InElixir do
 
   defmodule P05 do
     def reverse(xs), do: _reverse(xs, [])
-    def _reverse([], ys), do: ys
-    def _reverse([x | xs], ys) do
+    defp _reverse([], ys), do: ys
+    defp _reverse([x | xs], ys) do
       _reverse(xs, [x | ys])
     end
     #def reverse(xs), do: Enum.reverse xs
