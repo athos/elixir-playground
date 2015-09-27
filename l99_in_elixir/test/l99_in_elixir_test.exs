@@ -90,4 +90,8 @@ defmodule L99InElixirTest do
   test "Insert an element at a given position into a list." do
     assert L.P21.insert_at([:a, :b, :c, :d], :alpha, 2) == [:a, :alpha, :b, :c, :d]
   end
+
+  test "Create a list containing all integers within a given range." do
+    assert L.P22.range(4, 9) == [4, 5, 6, 7, 8, 9]
+  end
 end

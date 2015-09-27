@@ -168,4 +168,13 @@ defmodule L99InElixir do
     defp _insert_at(xs, z, 1, ys), do: Enum.reduce ys, [z | xs], &[&1 | &2]
     defp _insert_at([x | xs], z, n, ys), do: _insert_at(xs, z, n-1, [x | ys])
   end
+
+  defmodule P22 do
+    def range(m, n), do: _range(m, n, [])
+    defp _range(m, n, ns) when m > n, do: Enum.reverse ns
+    defp _range(m, n, ns), do: _range(m+1, n, [m | ns])
+    # def range(m, n) do
+    #   if m > n, do: [], else: Enum.into m..n, []
+    # end
+  end
 end
