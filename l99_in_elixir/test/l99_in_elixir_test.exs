@@ -57,4 +57,8 @@ defmodule L99InElixirTest do
   test "Run-length encoding of a list (direct solution)." do
     assert L.P13.encode([:a, :a, :a, :a, :b, :c, :c, :a, :a, :d, :e, :e, :e, :e]) == [{4, :a}, :b, {2, :c}, {2, :a}, :d, {4, :e}]
   end
+
+  test "Duplicate the elements of a list." do
+    assert L.P14.dupli([:a, :b, :c, :c, :d]) == [:a, :a, :b, :b, :c, :c, :c, :c, :d, :d]
+  end
 end

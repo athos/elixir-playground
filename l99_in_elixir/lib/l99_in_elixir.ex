@@ -111,4 +111,10 @@ defmodule L99InElixir do
     defp _add(1, t, ys), do: [t | ys]
     defp _add(n, t, ys), do: [{n, t} | ys]
   end
+
+  defmodule P14 do
+    def dupli(xs) do
+      Stream.flat_map(xs, &[&1, &1]) |> Enum.into([])
+    end
+  end
 end
