@@ -117,4 +117,10 @@ defmodule L99InElixir do
       Stream.flat_map(xs, &[&1, &1]) |> Enum.into([])
     end
   end
+
+  defmodule P15 do
+    def repli(xs, n) do
+      Stream.flat_map(xs, &Enum.take(Stream.cycle([&1]), n)) |> Enum.into([])
+    end
+  end
 end

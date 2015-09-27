@@ -61,4 +61,8 @@ defmodule L99InElixirTest do
   test "Duplicate the elements of a list." do
     assert L.P14.dupli([:a, :b, :c, :c, :d]) == [:a, :a, :b, :b, :c, :c, :c, :c, :d, :d]
   end
+
+  test "Replicate the elements of a list a given number of times." do
+    assert L.P15.repli([:a, :b, :c], 3) == [:a, :a, :a, :b, :b, :b, :c, :c, :c]
+  end
 end
