@@ -12,4 +12,12 @@ defmodule L99InElixir do
 
     #def my_but_last(xs), do: Enum.slice xs, -2, 2
   end
+
+  defmodule P03 do
+    def element_at([x | _], 1), do: x
+    def element_at([x | xs], n) do
+      element_at(xs, n-1)
+    end
+    #def element_at(xs, n), do: Enum.at xs, n-1
+  end
 end
