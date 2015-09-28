@@ -193,4 +193,12 @@ defmodule L99InElixir do
       P23.rnd_select(xs, Enum.count(xs))
     end
   end
+
+  defmodule P26 do
+    def combination(0, _), do: [[]]
+    def combination(_, []), do: []
+    def combination(n, [x | xs]) do
+      Enum.map(combination(n-1, xs), &[x | &1]) ++ combination(n, xs)
+    end
+  end
 end

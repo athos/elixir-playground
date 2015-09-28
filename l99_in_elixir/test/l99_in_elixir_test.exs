@@ -115,4 +115,8 @@ defmodule L99InElixirTest do
     assert Enum.count(result) == Enum.count(input)
     assert Enum.all?(result, &(&1 in input))
   end
+
+  test "Generate the combinations of K distinct objects chosen from the N elements of a list" do
+    assert L.P26.combination(3, [:a, :b, :c, :d]) == [[:a, :b, :c], [:a, :b, :d], [:a, :c, :d], [:b, :c, :d]]
+  end
 end
