@@ -108,4 +108,11 @@ defmodule L99InElixirTest do
     assert Enum.count(result) == 6
     assert Enum.all?(result, &(&1 in 1..49))
   end
+
+  test "Generate a random permutation of the elements of a list." do
+    input = [:a, :b, :c, :d, :e, :f]
+    result = L.P25.rnd_permu(input)
+    assert Enum.count(result) == Enum.count(input)
+    assert Enum.all?(result, &(&1 in input))
+  end
 end

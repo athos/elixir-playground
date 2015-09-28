@@ -187,4 +187,10 @@ defmodule L99InElixir do
       P22.range(1, max) |> P23.rnd_select(n)
     end
   end
+
+  defmodule P25 do
+    def rnd_permu(xs) do
+      P23.rnd_select(xs, Enum.count(xs))
+    end
+  end
 end
