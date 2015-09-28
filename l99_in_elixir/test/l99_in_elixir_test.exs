@@ -94,4 +94,12 @@ defmodule L99InElixirTest do
   test "Create a list containing all integers within a given range." do
     assert L.P22.range(4, 9) == [4, 5, 6, 7, 8, 9]
   end
+
+  test "Extract a given number of randomly selected elements from a list." do
+    input = [:a, :b, :c, :d, :e, :f, :g, :h]
+    result = L.P23.rnd_select(input, 3)
+    assert Enum.count(result) == 3
+    assert Enum.all?(result, fn x -> x in input end)
+    assert Enum.uniq(result) == result
+  end
 end

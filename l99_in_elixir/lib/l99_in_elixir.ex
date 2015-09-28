@@ -177,4 +177,8 @@ defmodule L99InElixir do
     #   if m > n, do: [], else: Enum.into m..n, []
     # end
   end
+
+  defmodule P23 do
+    def rnd_select(xs, n), do: Enum.take_random(xs, n)
+  end
 end
