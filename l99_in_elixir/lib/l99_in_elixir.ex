@@ -181,4 +181,10 @@ defmodule L99InElixir do
   defmodule P23 do
     def rnd_select(xs, n), do: Enum.take_random(xs, n)
   end
+
+  defmodule P24 do
+    def lotto_select(n, max) do
+      P22.range(1, max) |> P23.rnd_select(n)
+    end
+  end
 end

@@ -102,4 +102,10 @@ defmodule L99InElixirTest do
     assert Enum.all?(result, fn x -> x in input end)
     assert Enum.uniq(result) == result
   end
+
+  test "Lotto: Draw N different random numbers from the set 1..M." do
+    result = L.P24.lotto_select(6, 49)
+    assert Enum.count(result) == 6
+    assert Enum.all?(result, &(&1 in 1..49))
+  end
 end
